@@ -3,7 +3,8 @@
 @section('title', 'Order List')
 
 @section('content')
-    <div class="container">
+    <div class="pizza-list-background">
+        <div class="container">
         <div class="d-flex align-items-center justify-content-between mb-3">
             <h1 class="h3 mb-0">Pizza <span class="text-danger">List</span></h1>
             <a class="btn btn-primary" href="{{ route('pizzas.create') }}"><i class="fa-solid fa-plus"></i> Add Pizza</a>
@@ -20,6 +21,7 @@
                                 <th scope="col"><i class="fas fa-pizza-slice"></i> Name</th>
                                 <th scope="col"><i class="fa fa-tag"></i> Type</th>
                                 <th scope="col"><i class="fa fa-layer-group"></i> Base</th>
+                                <th scope="col"><i class="fa fa-coins"></i> Price</th>
                                 <th scope="col"><i class="fa fa-image"></i> Image</th>
                                 <th scope="col" class="text-end"><i class="fa fa-link"></i> Go</th>
                             </tr>
@@ -31,6 +33,7 @@
                                     <td>{{ $pizza->name  }}</td>
                                     <td>{{ $pizza->type }}</td>
                                     <td>{{ $pizza->base  }}</td>
+                                    <td>{{ $pizza->price }}</td>
                                     <td>
                                         @if(!empty($pizza->image_url))
                                             <img class="rounded" src="{{ $pizza->image_url }}" alt="Pizza image" style="max-width: 60px; height: auto;">
@@ -61,5 +64,6 @@
         <div class="mt-3">
             <a class="btn btn-link" href="{{ url('/') }}"><i class="fa-solid fa-arrow-left"></i> Back to homepage</a>
         </div>
+    </div>
     </div>
 @endsection

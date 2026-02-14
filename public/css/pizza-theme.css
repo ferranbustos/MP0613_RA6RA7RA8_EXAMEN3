@@ -1,0 +1,87 @@
+/* Pizza Theme Background Styles */
+
+/* Welcome/Homepage background */
+.pizza-page-background {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 178, 102, 0.1) 100%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="pizza" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"><circle cx="100" cy="100" r="80" fill="%23FF6B6B" opacity="0.05"/><circle cx="100" cy="100" r="70" fill="none" stroke="%23FF6B6B" stroke-width="1" opacity="0.08"/><circle cx="85" cy="85" r="8" fill="%23FFB266" opacity="0.1"/><circle cx="115" cy="90" r="6" fill="%23FFB266" opacity="0.1"/><circle cx="100" cy="115" r="7" fill="%23FFB266" opacity="0.1"/></pattern></defs><rect width="1200" height="600" fill="white"/><rect width="1200" height="600" fill="url(%23pizza)"/></svg>') repeat;
+    background-attachment: fixed;
+    background-size: 200px 200px, auto;
+    position: relative;
+}
+
+/* Pizza List/Index background */
+.pizza-list-background {
+    background: linear-gradient(180deg, rgba(255, 107, 107, 0.08) 0%, rgba(255, 178, 102, 0.08) 100%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><pattern id="ingredients" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><g opacity="0.06"><path d="M50,10 L90,40 L70,80 L30,80 L10,40 Z" fill="%23FFB266" stroke="%23FF6B6B" stroke-width="0.5"/><circle cx="50" cy="50" r="3" fill="%23FF6B6B"/></g></pattern></defs><rect width="400" height="400" fill="%23fafafa"/><rect width="400" height="400" fill="url(%23ingredients)"/></svg>') repeat;
+    background-size: auto, 100px 100px;
+    min-height: 100vh;
+}
+
+/* Pizza Detail/Show background */
+.pizza-detail-background {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.12) 0%, rgba(255, 178, 102, 0.12) 50%, rgba(200, 200, 200, 0.05) 100%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><defs><pattern id="pizza-detail" x="0" y="0" width="300" height="300" patternUnits="userSpaceOnUse"><circle cx="150" cy="150" r="120" fill="%23FFEAA7" opacity="0.03"/><path d="M150,30 L240,90 L210,210 L90,210 L60,90 Z" fill="none" stroke="%23FFB266" stroke-width="0.5" opacity="0.05"/><circle cx="130" cy="120" r="8" fill="%23FF6B6B" opacity="0.05"/><circle cx="170" cy="140" r="6" fill="%23FF6B6B" opacity="0.05"/><circle cx="150" cy="180" r="7" fill="%23FF6B6B" opacity="0.05"/></pattern></defs><rect width="600" height="600" fill="%23ffffff"/><rect width="600" height="600" fill="url(%23pizza-detail)"/></svg>') repeat;
+    background-size: 300px 300px;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* Order Create/Form background */
+.pizza-form-background {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.09) 0%, rgba(255, 178, 102, 0.09) 100%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><defs><pattern id="form-pattern" x="0" y="0" width="150" height="150" patternUnits="userSpaceOnUse"><g opacity="0.04"><rect x="20" y="20" width="110" height="110" fill="none" stroke="%23FF6B6B" stroke-width="1"/><circle cx="75" cy="75" r="40" fill="none" stroke="%23FFB266" stroke-width="0.5"/></g></pattern></defs><rect width="500" height="500" fill="%23f8f9fa"/><rect width="500" height="500" fill="url(%23form-pattern)"/></svg>') repeat;
+    background-size: 150px 150px;
+    min-height: 100vh;
+}
+
+/* Orders List background */
+.pizza-orders-background {
+    background: linear-gradient(to bottom, rgba(255, 107, 107, 0.07) 0%, rgba(255, 178, 102, 0.07) 100%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><defs><pattern id="orders-pattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"><g opacity="0.05"><path d="M100,20 L180,80 L140,160 L60,160 L20,80 Z" fill="%23FF6B6B"/><circle cx="80" cy="100" r="5" fill="%23FFB266"/><circle cx="120" cy="90" r="4" fill="%23FFB266"/><circle cx="100" cy="130" r="4.5" fill="%23FFB266"/></g></pattern></defs><rect width="800" height="400" fill="%23fafafa"/><rect width="800" height="400" fill="url(%23orders-pattern)"/></svg>') repeat;
+    background-size: 200px 200px;
+    min-height: 100vh;
+}
+
+/* Welcome page specific */
+.welcome-container {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.15) 0%, rgba(255, 178, 102, 0.15) 100%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><defs><pattern id="welcome-pattern" x="0" y="0" width="250" height="250" patternUnits="userSpaceOnUse"><circle cx="125" cy="125" r="100" fill="%23FFEAA7" opacity="0.04"/><path d="M125,25 L200,85 L170,195 L80,195 L50,85 Z" fill="none" stroke="%23FFB266" stroke-width="1" opacity="0.08"/><circle cx="100" cy="100" r="6" fill="%23FF6B6B" opacity="0.08"/><circle cx="150" cy="110" r="5" fill="%23FF6B6B" opacity="0.08"/><circle cx="125" cy="150" r="5.5" fill="%23FF6B6B" opacity="0.08"/></pattern></defs><rect width="1000" height="600" fill="%23ffffff"/><rect width="1000" height="600" fill="url(%23welcome-pattern)"/></svg>') repeat;
+    background-size: 250px 250px;
+    background-attachment: fixed;
+    padding: 60px 0;
+}
+
+/* Subtle pizza accent for cards */
+.pizza-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.pizza-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 107, 107, 0.02) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Animation for pizza elements */
+@keyframes pizzaFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.pizza-float {
+    animation: pizzaFloat 6s ease-in-out infinite;
+}
+
+/* Gradient text for pizza titles */
+.pizza-title {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FFB266 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

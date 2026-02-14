@@ -3,7 +3,8 @@
 @section('title', 'Order Detail')
 
 @section('content')
-    <div class="container">
+    <div class="pizza-detail-background">
+        <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="card shadow-sm">
@@ -21,8 +22,10 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="p-3 bg-light rounded">
+                                    <p class="mb-1"><strong>User ID:</strong> {{ $order->user_id }}</p>
                                     <p class="mb-1"><strong>Type:</strong> {{ $order->type }}</p>
-                                    <p class="mb-0"><strong>Base:</strong> {{ $order->base }}</p>
+                                    <p class="mb-1"><strong>Base:</strong> {{ $order->base }}</p>
+                                    <p class="mb-0"><strong>Price:</strong> {{ $order->price }}</p>
                                 </div>
                             </div>
                             <div class="col-md-6">

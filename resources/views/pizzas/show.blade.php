@@ -1,22 +1,27 @@
 @extends('layouts.app')
 
-@section('title', 'Order Detail')
+@section('title', 'Pizza Detail')
 
 @section('content')
-    <div class="container">
+    <div class="pizza-detail-background">
+        <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="card shadow-sm">
                     <div class="card-header bg-white d-flex align-items-center justify-content-between">
-                        <h2 class="h5 mb-0">Order for <span class="text-danger">{{ $pizza->name }}</span></h2>
+                        <h2 class="h5 mb-0">Pizza <span class="text-danger">{{ $pizza->name }}</span></h2>
                         <span class="badge bg-light text-dark">#{{ $pizza->id }}</span>
                     </div>
                     <div class="card-body">
                         @if(!empty($pizza->image_url))
                             <div class="text-center mb-4">
-                                <img class="img-fluid rounded" src="{{ $pizza->image_url }}" alt="Pizza image" style="max-width: 320px; height: auto;">
+                                <img class="img-fluid rounded" src="{{ $pizza->image_url }}" alt="Pizza image" style="width: 400px; height: 300px;">
                             </div>
                         @endif
+
+                        <p class="text-muted">
+                            {{ $pizza->description }}
+                        </p>
 
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -38,11 +43,7 @@
                         </div>
 
                         <div class="mt-4 d-flex gap-2">
-                            <form action="{{ route('pizzas.destroy', $pizza->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-success" type="submit"><i class="fa-solid fa-check"></i> Complete Order</button>
-                            </form>
+                            <a class="btn btn-success" href="{{ route('order.create') }}?pizza_id={{ $pizza->id }}"><i class="fa-solid fa-check"></i> Order</a>
                             <a class="btn btn-outline-secondary" href="{{ route('pizzas.index') }}">Back to all pizzas</a>
                         </div>
                     </div>

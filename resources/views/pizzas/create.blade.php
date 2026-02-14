@@ -3,7 +3,8 @@
 @section('title', 'Create Order')
 
 @section('content')
-    <div class="container">
+    <div class="pizza-form-background">
+        <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="card shadow-sm">
@@ -107,5 +108,6 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 @endsection

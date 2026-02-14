@@ -16,11 +16,15 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('type');
             $table->string('base');
             $table->string('name');
+            $table->integer('price');
             $table->json('toppings')->nullable();
             $table->string('image_url')->nullable();
+
+            $table->foreign('user_id')->references('id')->on('users')->nullOnDelete();
         });
     }
 
@@ -31,6 +35,10 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::table('orders', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+        });
+
         Schema::dropIfExists('orders');
     }
 };

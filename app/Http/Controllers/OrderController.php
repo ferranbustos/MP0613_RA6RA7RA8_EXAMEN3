@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -23,26 +24,29 @@ class OrderController extends Controller
 
     public function create()
     {
-        return view('orders.pizzas.create');
+        $pizzas = \App\Models\Pizza::all();
+        $selectedPizza = request()->query('pizza_id') ? \App\Models\Pizza::findOrFail(request()->query('pizza_id')) : null;
+        return view('orders.pizzas.create', ['pizzas' => $pizzas, 'selectedPizza' => $selectedPizza]);
     }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'type' => 'required|string|not_in:0|max:255',
-            'base' => 'required|string|not_in:0|max:255',
+            'pizza_id' => 'required|integer|not_in:0',
             'toppings' => 'nullable|array',
             'toppings.*' => 'string|max:255',
-            'image_url' => 'required|string|not_in:0|max:255',
         ]);
 
+        $pizza = \App\Models\Pizza::findOrFail($validated['pizza_id']);
+
         $order = new Order();
-        $order->name = $validated['name'];
-        $order->type = $validated['type'];
-        $order->base = $validated['base'];
+        $order->user_id = Auth::id();
+        $order->name = $pizza->name;
+        $order->type = $pizza->type;
+        $order->base = $pizza->base;
+        $order->price = $pizza->price;
         $order->toppings = $validated['toppings'] ?? [];
-        $order->image_url = $validated['image_url'];
+        $order->image_url = $pizza->image_url;
         $order->save();
 
         return redirect(route('order.index'))->with('mssg', 'Thank you for your order');

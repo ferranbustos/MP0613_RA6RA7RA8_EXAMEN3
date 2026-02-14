@@ -3,7 +3,8 @@
 @section('title', 'Order List')
 
 @section('content')
-    <div class="container">
+    <div class="pizza-orders-background">
+        <div class="container">
         <div class="d-flex align-items-center justify-content-between mb-3">
             <h1 class="h3 mb-0">Pizza <span class="text-danger">Orders</span></h1>
             <a class="btn btn-primary" href="{{ route('order.create') }}"><i class="fa-solid fa-plus"></i> New Order</a>
@@ -18,9 +19,10 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col"><i class="fa fa-calendar"></i> Order Date</th>
-                                <th scope="col"><i class="fa fa-user"></i> User</th>
+                                <th scope="col"><i class="fa fa-user"></i> User ID</th>
                                 <th scope="col"><i class="fa fa-flag"></i> Order Type</th>
                                 <th scope="col"><i class="fa fa-deaf"></i> Order Base</th>
+                                <th scope="col"><i class="fa fa-coins"></i> Price</th>
                                 <th scope="col"><i class="fa fa-image"></i> Image</th>
                                 <th scope="col" class="text-end"><i class="fa fa-link"></i> Go</th>
                             </tr>
@@ -35,9 +37,10 @@
                                         <i class="fa fa-clock"></i>
                                         {{ $order->created_at->format('H:i:s') }}
                                     </td>
-                                    <td>{{ $order->name }}</td>
+                                    <td>{{ $order->user_id }}</td>
                                     <td>{{ $order->type }}</td>
                                     <td>{{ $order->base }}</td>
+                                    <td>{{ $order->price }}</td>
                                     <td>
                                         @if(!empty($order->image_url))
                                             <img class="rounded" src="{{ $order->image_url }}" alt="Order image" style="max-width: 60px; height: auto;">
@@ -68,5 +71,6 @@
         <div class="mt-3">
             <a class="btn btn-link" href="{{ url('/') }}"><i class="fa-solid fa-arrow-left"></i> Back to homepage</a>
         </div>
+    </div>
     </div>
 @endsection

@@ -33,6 +33,7 @@ Route::controller(PizzaController::class)->group(function () {
     Route::get('/pizzas/create', 'create')->name('pizzas.create');
     Route::post('/pizzas', 'store')->name('pizzas.store');
     Route::get('/pizzas/{id}', 'show')->name('pizzas.show');
+    Route::delete('/pizzas/{id}', 'destroy')->name('pizzas.destroy');
 });
 
 $blackList = [
