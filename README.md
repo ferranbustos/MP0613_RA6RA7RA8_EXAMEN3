@@ -43,7 +43,8 @@ Backoffice page
 2. Install Composer dependencies:
 
 ```bash
-composer install
+
+
 ```
 
 3. Copy the example enviroment file:
