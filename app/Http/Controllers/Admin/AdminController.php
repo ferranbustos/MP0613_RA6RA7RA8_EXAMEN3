@@ -13,10 +13,10 @@ class AdminController extends Controller
     public function dashboard()
     {
         $stats = [
-            'total_pizzas' => Pizza::count(),
+            'total_pizzas' => Order::count(),
             'total_orders' => Order::count(),
             'total_users' => User::where('role', 'client')->count(),
-            'total_sales' => Pizza::sum('price'),
+            'total_sales' => Order::sum('price'),
             'recent_orders' => Order::with('user')->latest()->take(10)->get(),
         ];
 
